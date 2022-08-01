@@ -30,18 +30,18 @@ provider:
     S3_BUCKET_NAME: udatodo-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
 
-  # logs:
-  #   # Enable API Gateway logs
-  #   restApi: true
+  logs:
+    # Enable API Gateway logs
+    restApi: true
 
-  # iam:
-  #   role:
-  #     statements:
-  #       - Effect: Allow
-  #         Action:
-  #           - xray:PutTelemetryRecords
-  #           - xray:PutTraceSegments
-  #         Resource: "*"
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - xray:PutTelemetryRecords
+            - xray:PutTraceSegments
+          Resource: "*"
 
 custom:
   documentation:
