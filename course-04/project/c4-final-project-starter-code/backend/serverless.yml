@@ -4,6 +4,7 @@ app: udatodo
 service: udatodo
 
 plugins:
+  - serverless-webpack
   - serverless-iam-roles-per-function
   - serverless-reqvalidator-plugin
   - serverless-aws-documentation
@@ -25,9 +26,9 @@ provider:
   environment:
     PROJECT_NAME: udatodo
     TODOS_TABLE: udatodo-${self:provider.stage}
-    # TODOS_CREATED_AT_INDEX: CreatedAtIndex
+    TODOS_CREATED_AT_INDEX: CreatedAtIndex
     S3_BUCKET_NAME: udatodo-images-${self:provider.stage}
-    # SIGNED_URL_EXPIRATION: 300
+    SIGNED_URL_EXPIRATION: 300
 
   # logs:
   #   # Enable API Gateway logs
